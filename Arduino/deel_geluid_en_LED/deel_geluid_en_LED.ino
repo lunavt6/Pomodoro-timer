@@ -48,21 +48,23 @@ void loop() {
       tone(speaker, 262, 100);
       ledState = LED_AAN_G_LED_UIT_R;
       digitalWrite(ledPinG, HIGH);
-      Serial.println("Nieuwe state: " ledState);
+      Serial.println("Nieuwe state: studeren ");
+
     }
     else if (ledState == LED_AAN_G_LED_UIT_R) { // studeertijd -> pauze
       tone(speaker, 262, 100);
       ledState = LED_UIT_G_LED_AAN_R;
       digitalWrite(ledPinG, LOW);
       digitalWrite(ledPinR, HIGH);
-      Serial.println("Nieuwe state: " ledState);
+      Serial.println("Nieuwe state: pauze ");
     }
-    else // pauze -> uit
+    else{ // pauze -> uit
       tone(speaker, 262, 100);
       ledState = LED_UIT_G_LED_UIT_R;
       digitalWrite(ledPinG, LOW);
       digitalWrite(ledPinR, LOW);
-      Serial.println("Nieuwe state: " ledState);
-    }
+      Serial.println("Nieuwe state: uit");
 
+    }
   }
+}
