@@ -35,3 +35,9 @@ Er zullen twee leds aanwezig zijn.
 
 ### Geluid
 Bij elke kleurwisseling van de leds zal er een ping geluid te horen zijn.
+
+## Algemene werkwijze
+De opbouw van de code ging als volgt:
+- De code voor de componenten werd apart geschreven, zo kon van elk de werking getest worden.
+- De code van de leds en de speaker werd vervolgens samengevoegd, alsook degene van het scherm en de knoppen.
+- Finaal werden beide codes samengevoegd tot een geheel werkend product.
