@@ -36,6 +36,22 @@ unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay =50;
 unsigned long lastDebounceTime4;
 
+int speaker = 9;
+int ledPinR = A1;
+int ledPinG =A0;
+unsigned long vorigeTijd;
+
+
+enum LedStates {
+  LED_UIT_G_LED_UIT_R,
+  LED_AAN_G_LED_UIT_R,
+  LED_UIT_G_LED_AAN_R
+};
+LedStates vorigeState = LED_UIT_G_LED_UIT_R;
+LedStates ledState = LED_UIT_G_LED_UIT_R; // toestel staat uit
+
+int teller=0;
+int pauze=false;
 
 void setup() {
   // set up the LCD's number of columns and rows:
@@ -52,6 +68,12 @@ void setup() {
   VorigeKnop3=HIGH;
   VorigeKnop4=HIGH;
   Serial.begin(9600);
+    pinMode(speaker, OUTPUT);
+  pinMode(ledPinR, OUTPUT);
+  pinMode(ledPinG, OUTPUT);
+  vorigeTijd = millis();
+  digitalWrite(ledPinG, LOW);
+  digitalWrite(ledPinR, LOW);
 }
 
 void loop() {
@@ -70,9 +92,10 @@ if (WaardeKnop1 == LOW and VorigeKnop1 == HIGH) {
       lcd.display();
       lcd.clear();
       lcd.print("Tijd instellen");
-    } else {
+    } 
+    else {
       digitalWrite(AanUit, LOW);
-      lcd.clear();
+      lcd.noDisplay();
     }
   }
 }
@@ -172,24 +195,76 @@ VorigeKnop4 = WaardeKnop4;
       i = 0;
       j = 0;
       timerLoopt = false;
+      teller++;
+      pauze=true;
+      tone(speaker, 262, 100);
     }
   }
 }
 
 lcd.setCursor(0, 1);
 
-if (timerLoopt) {
-  lcd.print(i);
-  lcd.print(":");
-  if (j < 10) {
-  lcd.print("0");}
-  lcd.print(j);
-} 
+if (digitalRead(AanUit) == HIGH) {
+
+  if (timerLoopt) {
+    lcd.print(i);
+    lcd.print(":");
+    if (j < 10) lcd.print("0");
+    lcd.print(j);
+  } else {
+    lcd.print(minuten);
+    lcd.print(":");
+    if (seconden < 10) lcd.print("0");
+    lcd.print(seconden);
+  }
+
+} else {
+  lcd.clear(); 
+}
+
+if(digitalRead(AanUit)==LOW){
+    ledState=LED_UIT_G_LED_UIT_R;
+  }
+else if (timerLoopt){
+    ledState=LED_AAN_G_LED_UIT_R;
+  }
 else {
-  lcd.print(minuten);
-  lcd.print(":");
-  if (seconden < 10) {
-  lcd.print("0");}
-  lcd.print(seconden);
+    ledState=LED_UIT_G_LED_AAN_R;
+  }
+  // state wisselen  
+if (ledState == LED_AAN_G_LED_UIT_R){ //toestel uit -> studeertijd
+  
+  digitalWrite(ledPinG, HIGH);
+  digitalWrite(ledPinR, LOW);
+  Serial.println("Nieuwe state: studeren");
+
+    }
+else if (ledState == LED_UIT_G_LED_AAN_R) { // studeertijd -> pauze
+  
+  digitalWrite(ledPinG, LOW);
+  digitalWrite(ledPinR, HIGH);
+  Serial.println("Nieuwe state: pauze");
+  if (teller<5 and pauze==true){
+    delay(5000);
+    tone(speaker, 262, 100);
+    pauze=false;
+  }
+  if (teller==5 and pauze == true){
+    delay(10000);
+    teller=0;
+    tone(speaker, 262, 100);
+    pauze=false;
+  }
+    }
+else{ // pauze -> uit
+  
+  digitalWrite(ledPinG, LOW);
+  digitalWrite(ledPinR, LOW);
+  Serial.println("Nieuwe state: uit");
+
+    }
+  if (ledState != vorigeState) {
+  tone(speaker, 262, 100);
+  vorigeState = ledState;
 }
 }
