@@ -1,9 +1,9 @@
 // bibliotheek initialiseren nodig voor het LED-scherm
-#include <LiquidCrystal.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
 // Stel het aantal kolommen en rijen van het LCD-scherm in:
-const int rs = 12, e = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
-LiquidCrystal lcd(rs, e, d4, d5, d6, d7);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 int AanUit = 7; // voor 'A', om backlight aan en uit te zetten
 int Toestand;
 
@@ -59,6 +59,17 @@ LedStates ledState = LED_UIT_G_LED_UIT_R; // toestel staat uit
 int teller = 0;
 int pauze = false;
 
+// variabelen nodig voor 'studie' en 'studeren'
+int studie = 0;
+int studeren = 0;
+int hoeveelPauze = 0;
+int hoeveelPauzeMin = 0;
+int hoeveelPauzeSec = 0;
+int langePauze = 0;
+int hoeveelStudieMin = 0;
+int hoeveelStudieSec = 0;
+int totaalPauzeSec = 0;
+
 void setup()
 {
   // PinModes output of input instellen
@@ -82,6 +93,8 @@ void setup()
   vorigeTijd = millis();
   digitalWrite(ledPinG, LOW);
   digitalWrite(ledPinR, LOW);
+  lcd.init();          // LCD starten
+
 }
 
 void loop()
@@ -101,14 +114,18 @@ void loop()
 
       if (Toestand == 1)
       {
-        digitalWrite(AanUit, HIGH); // backlight aanzetten
+        lcd.backlight(); // backlight aanzetten
+        digitalWrite(AanUit, HIGH);
         lcd.display();              // tekst aanzetten
         lcd.clear();                // zorgen dat er geen tekst staat
         lcd.print("Tijd instellen");
+        lcd.setCursor(5, 1);
+        lcd.print("studie:");
       }
       else
       {
-        digitalWrite(AanUit, LOW); // backlight afzetten
+        lcd.noBacklight(); // backlight afzetten
+        digitalWrite(AanUit, LOW);
         lcd.noDisplay();           // display uizetten
       }
     }
@@ -215,13 +232,27 @@ void loop()
         i--;
       }
 
+      if (j > 0 && j < 6 or j > 30 && j < 36)
+      { // j moet gedurende deze intervallen pauze aangeven
+        if (j == 5 or j == 35)
+        { // op de led wisseling zal er een beep geluid te horen zijn
+          tone(speaker, 262, 100);
+          teller++;
+        }
+        pauze = true; // zal verderop ervoor zorgen dat het systeem zich in de state 'LED_UIT_G_LED_AAN_R' verkeert
+      }
+      if (j > 5 && j < 30 or j > 35 && j <= 59)
+      {                // j moet gedurende deze intervallen studeren aangeven
+        pauze = false; // zal verderop ervoor zorgen dat het systeem zich in de state 'LED_AAN_G_LED_UIT_R' verkeert
+      }
+
       if (i < 0)
       { // als i vervolgens negatief wordt, stopt de timer
         i = 0;
         j = 0;
         timerLoopt = false;
-        teller++;                // zal pauzeduur bepalen, na het stoppen van de timer is er een cyclus doorlopen
-        pauze = true;            // zal verderop ervoor zorgen dat het systeem gedurende een tijd niets meer doet, deze variabele zorgt ervoor dat het systeem voor de eerste cyclus ook werkt
+        // teller++; // zal pauzeduur bepalen, na het stoppen van de timer is er een cyclus doorlopen
+        pauze = false;           // zal verderop ervoor zorgen dat het systeem gedurende een tijd niets meer doet, deze variabele zorgt ervoor dat het systeem voor de eerste cyclus ook werkt
         tone(speaker, 262, 100); // wanneer de timer gedaan is weerklinkt een geluid om de gebruiker te alarmeren
       }
     }
@@ -250,60 +281,123 @@ void loop()
       lcd.print(seconden);
     }
   }
+
   else
   { // als het scherm niet aanstaat mag er ook geen tekst weergegeven worden
     lcd.clear();
   }
 
-  // Led's toevoegen
+  // wanneer elke led zal branden of net niet
 
-  if (digitalRead(AanUit) == LOW)
-  { // als het scherm niet aanstaat, mogen de led's ook nog niet branden
+  // if(digitalRead(AanUit)==LOW){ // als het scherm niet aanstaat, mogen de led's ook nog niet branden -> niet nodig want zit in de else
+  // ledState=LED_UIT_G_LED_UIT_R;
+  //}
+  if (timerLoopt)
+  { // als de timer loopt en het scherm staat aan, dan is de groene led aan
+    if (pauze == true)
+    {
+      ledState = LED_UIT_G_LED_AAN_R;
+    }
+    else
+    {
+      ledState = LED_AAN_G_LED_UIT_R;
+    }
+  }
+  else
+  { // als het scherm aanstaat en de timer niet loopt
     ledState = LED_UIT_G_LED_UIT_R;
   }
-  else if (timerLoopt)
-  { // als de timer loopt en het scherm staat aan, dan is de groene led aan
-    ledState = LED_AAN_G_LED_UIT_R;
-  }
-  else
-  { // als het scherm aanstaat en de timer niet loopt, brandt de rode Led
-    ledState = LED_UIT_G_LED_AAN_R;
-  }
+
   // Leds laten branden, bij variabelen de juiste led's laten branden
-
-  if (ledState == LED_AAN_G_LED_UIT_R)
-  { // toestel uit -> studeertijd
-
+  switch (ledState)
+  {
+  case LED_AAN_G_LED_UIT_R: // toestel uit -> studeertijd
+    studie = 0;
+    lcd.setCursor(0, 0);
+    if (studeren == 0)
+    { // variabele werd ingevoerd om zodat de text studeren niet knippert
+      lcd.setCursor(0, 0);
+      lcd.print("                  ");
+      studeren++;
+    }
+    lcd.setCursor(0, 0);
+    lcd.print("studeren");
     digitalWrite(ledPinG, HIGH);
     digitalWrite(ledPinR, LOW);
-  }
-  else if (ledState == LED_UIT_G_LED_AAN_R)
-  { // studeertijd -> pauze
+    lcd.setCursor(5, 1);       // juiste plaats zetten waar 'pauze' verwijderd moet worden
+    lcd.print("            "); // 'pauze' verwijderen
+    break;
 
+  case LED_UIT_G_LED_AAN_R: // studeertijd -> pauze
+    studeren = 0;
     digitalWrite(ledPinG, LOW);
     digitalWrite(ledPinR, HIGH);
-    // als rood aan is kan er pauze zijn, om dit te controleren werd de variabele pauze eerder geïntroduceerd
-    if (teller < 5 and pauze == true)
-    { // na 5 cycli vindt een langere pauze plaats
-      delay(5000);
-      tone(speaker, 262, 100); // na de pauze klinkt een toon om de gebruiker te alarmeren dat de pauze geaan is
-      pauze = false;           // de variabele wordt terug goed gezet opdat de cyclus niet opnieuw doorlopen zal worden en de tijd opnieuw ingesteld kan worden
+    lcd.setCursor(0, 0);
+    lcd.print("                      ");
+    lcd.setCursor(11, 1); // juiste plaats zetten waar 'pauze' geprint zal worden
+    lcd.print("pauze");   // 'pauze' komt naast timer
+    if (teller == 4)
+    { // voor lange pauzes
+      lcd.setCursor(11, 1);
+      lcd.print("           ");
+      lcd.setCursor(0, 1);
+      lcd.print("lange pauze");
+      delay(10000);
+      teller = 0;
+      lcd.setCursor(0, 1);
+      lcd.print("           ");
+      j = j - 10; // tijd loop door doorheen de pauze
+      if (j < 0)
+      {
+        i--;
+        j = 60 + j;
+      }
     }
-    if (teller == 5 and pauze == true)
-    {
-      delay(10000); // een langere pauze
-      teller = 0;   // na 5 cycli wordt dan opnieuw een lange pauze gegeven
-      tone(speaker, 262, 100);
-      pauze = false; // idem als voorheen
-    }
-  }
-  else
-  { // pauze -> uit
+    break;
 
+  case LED_UIT_G_LED_UIT_R:
     digitalWrite(ledPinG, LOW);
     digitalWrite(ledPinR, LOW);
+    if (digitalRead(AanUit) != LOW)
+    {
+      lcd.setCursor(0, 0);
+      lcd.print("Tijd instellen");
+      if (studie == 0)
+      {                           // variabele wordt ingevoerd zodat studie en diens tijd niet flikkert
+        lcd.setCursor(11, 1);     // juiste plaats zetten waar 'pauze' verwijderd moet worden
+        lcd.print("           "); // 'pauze' verwijderen
+        studie++;
+      }
+      lcd.setCursor(5, 1);
+      lcd.print("studie:");
+      hoeveelPauze = minuten * 2 + seconden / 30; // eerst de hoeveelheid definiëren dat de gebruiker pauze heeft
+      if (hoeveelPauze > 4)
+      { // na 4 keer pauze volgt een lange pauze, berekenen hoeveel deze voorkomt
+        langePauze = hoeveelPauze / 5;
+      }
+      hoeveelPauze = (hoeveelPauze + langePauze) * 5;
+      langePauze = 0;                                // terug resetten, anders blijft tijd bijkomen
+      int totaalStudieSec = minuten * 60 + seconden; // gehele tijd omzetten naar seconden
+      int totaalPauzeSec = hoeveelPauze;
+
+      int resultaatSec = totaalStudieSec - totaalPauzeSec; // hoeveel seconden effectieve studietijd
+
+      hoeveelStudieMin = resultaatSec / 60; // terug naar min + sec
+      hoeveelStudieSec = resultaatSec % 60;
+
+      lcd.print(hoeveelStudieMin); // uitprinten
+      lcd.print(":");
+
+      if (hoeveelStudieSec < 10)
+      {
+        lcd.print("0"); // voor mooie tijden
+      }
+
+      lcd.print(hoeveelStudieSec);
+    }
+    break;
   }
-  // speaker toevoegen: speaker laten werken wanneer de status van de Leds veandert
+  // speaker toevoegen: speaker laten werken wanneer de status van de Leds verandert
   if (ledState != vorigeState)
   {
     tone(speaker, 262, 100);
