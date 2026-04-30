@@ -18,10 +18,12 @@ void setup() {
   pinMode(ledPinG, OUTPUT);
   Serial.begin(115200);
   vorigeTijd = millis();
+  Serial.begin(9600);
+  
 }
 
 void loop() {
-  
+  Serial.println("gelukt");
   // verschillende tijden per state
   unsigned long interval;
   

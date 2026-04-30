@@ -16,6 +16,7 @@ void setup()
   // Print a message to the LCD.
   lcd.print("Tijd instellen");
   pinMode(knop, INPUT_PULLUP);
+  Serial.begin(9600);
 }
 
 void loop()
@@ -31,4 +32,5 @@ void loop()
     lcd.setCursor(0, 1);
     lcd.print(millis() / 1000);
   }
+  Serial.println("gelukt");
 }

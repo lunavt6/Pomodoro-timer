@@ -4,6 +4,8 @@ int speaker = 4;
 void setup() {
   // put your setup code here, to run once:
   pinMode(speaker, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("gelukt");
 }
 
 void loop() {
