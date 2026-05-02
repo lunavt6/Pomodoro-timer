@@ -44,6 +44,7 @@ De timer zal in totaal vier verschillende knoppen hebben:
 Er zullen twee leds aanwezig zijn.
 - Een groen ledje voor tijdens het studeren.
 - Een rood ledje voor tijdens de pauze.
+
 Deze leds branden wanneer er op de knop om de timer te starten wordt gedrukt.
 
 ![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)
@@ -56,3 +57,7 @@ De opbouw van de code ging als volgt:
 - De code voor de componenten werd apart geschreven, zo kon van elk de werking getest worden.
 - De code van de leds en de speaker werd vervolgens samengevoegd, alsook degene van het scherm en de knoppen.
 - Finaal werden beide codes samengevoegd tot een geheel werkend product.
+
+## Documenten
+1. [Links](Docs/links.md)
+2. [Opstellingen](Docs/opstellingen.md)

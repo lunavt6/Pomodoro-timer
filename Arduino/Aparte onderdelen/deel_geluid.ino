@@ -4,6 +4,8 @@ int speaker = 4;
 void setup() {
   // put your setup code here, to run once:
   pinMode(speaker, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("gelukt");
 }
 
 void loop() {
@@ -12,5 +14,3 @@ void loop() {
   delay(5000); // 5 seconden tussen elke beep
   //noTone(speaker); -> geen idee wat dit doet, hoor geen verschil met of zonder
 }
-
-
