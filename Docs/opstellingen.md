@@ -1,3 +1,7 @@
+# Opstellingen 
+
+## Componenten apart
+
 **Deel geluid**
 ![opstelling_geluid](../Imgs/opstelling_geluid.png)
 
@@ -8,4 +12,12 @@
 ![opstelling_leds](../Imgs/opstelling_leds.png)
 
 **Deel scherm**
-![opstelling_scherm](../Imgs/opstelling_scherm.png)
+![opstelling_scherm](../Imgs/deel%20scherm.png)
+
+## Componenten aan elkaar gelinkt
+
+**Deel leds en geluid**
+
+**Deel scherm en knoppen**
+
+## Alle componenten samen

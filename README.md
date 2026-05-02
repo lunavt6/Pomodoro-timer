@@ -1,5 +1,10 @@
 # Pomodoro-timer
 
+## Teamleden
+- Leen Geenens
+- Loes Vanmeerbeek
+- Luna Van Tittelboom
+
 ## Doelstellingen
 1. Vooraf instellen hoelang er gestudeerd moet worden.
     - Het instellen gebeurt in sprongen van 30 minuten.
@@ -8,14 +13,14 @@
 3. Na vier keer stap 2 te doorlopen volgt er een pauze van 30 minuten.
 
 In arduino:
-- werken = 45 seconden
-- korte pauze = 15 seconden
-- lange pauze = 1 minuut
+- werken = 25 seconden
+- korte pauze = 5 seconden
+- lange pauze = 10 seconden + 5 seconden 
 
 ## Verschillende componenten
 
 ### Scherm
-Hierop zie je de tijd en kan je instellen hoe lang je wilt werken.
+Hierop zie je de tijd en kan je instellen hoe lang je wilt werken. Naast het instellen wordt er ook weergegeven hoeveel tijd je werkelijk studeert, dus de tijd zonder pauzes. Het scherm zal ook weergeven in welke status je je bevindt, zo verschijnt er studeren op wanneer het groene lichtje brandt en pauze wanneer het rode lichtje brandt.
 
 ### Knoppen
 De timer zal in totaal vier verschillende knoppen hebben:
@@ -30,6 +35,7 @@ De timer zal in totaal vier verschillende knoppen hebben:
 Er zullen twee leds aanwezig zijn.
 - Een groen ledje voor tijdens het studeren.
 - Een rood ledje voor tijdens de pauze.
+Deze leds branden wanneer er op de knop om de timer te starten wordt gedrukt.
 
 ![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)
 
