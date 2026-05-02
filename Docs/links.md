@@ -30,6 +30,6 @@ https://wokwi.com/projects/462175882081870849
 
 ## Alle componenten samen
 
-https://wokwi.com/projects/462904691059844097
+https://wokwi.com/projects/462923072193805313
 
 

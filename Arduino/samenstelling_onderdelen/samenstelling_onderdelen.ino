@@ -93,8 +93,7 @@ void setup()
   vorigeTijd = millis();
   digitalWrite(ledPinG, LOW);
   digitalWrite(ledPinR, LOW);
-  lcd.init();          // LCD starten
-
+  lcd.init(); // LCD starten
 }
 
 void loop()
@@ -116,17 +115,17 @@ void loop()
       {
         lcd.backlight(); // backlight aanzetten
         digitalWrite(AanUit, HIGH);
-        lcd.display();              // tekst aanzetten
-        lcd.clear();                // zorgen dat er geen tekst staat
+        lcd.display(); // tekst aanzetten
+        lcd.clear();   // zorgen dat er geen tekst staat
         lcd.print("Tijd instellen");
         lcd.setCursor(5, 1);
-        lcd.print("studie:");
+        lcd.print(" stud:");
       }
       else
       {
         lcd.noBacklight(); // backlight afzetten
         digitalWrite(AanUit, LOW);
-        lcd.noDisplay();           // display uizetten
+        lcd.noDisplay(); // display uizetten
       }
     }
   }
@@ -266,6 +265,14 @@ void loop()
 
     if (timerLoopt)
     { // als de timer loopt , wordt gewoon telkens de geüpdate tijd geprint
+      if (i < 10)
+      {
+        lcd.print("0");
+      }
+      if (i < 0)
+      {
+        i = 0; // voor mooie tijden
+      }
       lcd.print(i);
       lcd.print(":");
       if (j < 10)
@@ -274,6 +281,14 @@ void loop()
     }
     else
     { // als de timer niet loopt, moeten gewoon de ingegeven waarden door knop2 en 3 weergegeven worden
+      if (minuten < 10)
+      {
+        lcd.print("0");
+      }
+      if (minuten < 0)
+      {
+        minuten = 0; // voor mooie tijden
+      }
       lcd.print(minuten);
       lcd.print(":");
       if (seconden < 10)
@@ -317,7 +332,7 @@ void loop()
     if (studeren == 0)
     { // variabele werd ingevoerd om zodat de text studeren niet knippert
       lcd.setCursor(0, 0);
-      lcd.print("                  ");
+      lcd.print("                         ");
       studeren++;
     }
     lcd.setCursor(0, 0);
@@ -356,6 +371,7 @@ void loop()
     break;
 
   case LED_UIT_G_LED_UIT_R:
+    studeren = 0;
     digitalWrite(ledPinG, LOW);
     digitalWrite(ledPinR, LOW);
     if (digitalRead(AanUit) != LOW)
@@ -369,7 +385,7 @@ void loop()
         studie++;
       }
       lcd.setCursor(5, 1);
-      lcd.print("studie:");
+      lcd.print(" stud:");
       hoeveelPauze = minuten * 2 + seconden / 30; // eerst de hoeveelheid definiëren dat de gebruiker pauze heeft
       if (hoeveelPauze > 4)
       { // na 4 keer pauze volgt een lange pauze, berekenen hoeveel deze voorkomt
@@ -385,9 +401,20 @@ void loop()
       hoeveelStudieMin = resultaatSec / 60; // terug naar min + sec
       hoeveelStudieSec = resultaatSec % 60;
 
+      if (hoeveelStudieMin < 10)
+      {
+        lcd.print("0"); // voor mooie tijden
+      }
+      if (hoeveelStudieMin < 0)
+      {
+        hoeveelStudieMin = 0; // voor mooie tijden
+      }
       lcd.print(hoeveelStudieMin); // uitprinten
       lcd.print(":");
-
+      if (hoeveelStudieSec < 10)
+      {
+        lcd.print("0"); // voor mooie tijden
+      }
       if (hoeveelStudieSec < 10)
       {
         lcd.print("0"); // voor mooie tijden
