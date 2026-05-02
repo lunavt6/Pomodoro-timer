@@ -6,25 +6,25 @@
 
 ![opstelling_geluid](../Imgs/opstelling_geluid.png)
 
-**Deel knoppen**
+### Deel knoppen
 
 ![opstelling_knoppen](../Imgs/deel%20knoppen%20apart.png)
 
-**Deel leds**
+### Deel leds
 
 ![opstelling_leds](../Imgs/opstelling_leds.png)
 
-**Deel scherm**
+### Deel scherm
 
 ![opstelling_scherm](../Imgs/deel%20scherm.png)
 
 ## Componenten aan elkaar gelinkt
 
-**Deel leds en geluid**
+### Deel leds en geluid
 
 ![opstelling_leds_en_geluid](../Imgs/opstelling_leds_en_geluid.png)
 
-**Deel scherm en knoppen**
+### Deel scherm en knoppen
 
 ![opstelling_scherm_en_knoppen](../Imgs/opstelling_scherm_en_knoppen.png)
 
