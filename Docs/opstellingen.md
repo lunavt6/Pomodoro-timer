@@ -2,7 +2,7 @@
 
 ## Componenten apart
 
-**Deel geluid**
+### Deel geluid
 
 ![opstelling_geluid](../Imgs/opstelling_geluid.png)
 
