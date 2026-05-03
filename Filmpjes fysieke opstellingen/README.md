@@ -2,15 +2,14 @@
 ## Scherm
 
 ## Knoppen
+[![Video](knoppen.png)](https://youtu.be/b3IosBUwgKo)
 
 ## LEDS
-<video controls src="LED.mp4" title="Title"></video>
-
+[![Video](LED.png)](https://youtube.com/shorts/3Zn8V1N-jyM?feature=share)
 ## Geluid
-<video controls src="Buzzer.mp4" title="Title"></video>
-
+[![Video](buzzer.png)](https://youtube.com/shorts/_ubhh5V3OtA?feature=share)
 # Samenvoeging
 ## LED+speaker
-<video controls src="LED+speaker.mp4" title="Title"></video>
-
+[![Video](LED+speaker.png)](https://youtube.com/shorts/nx5WJM_mvdI)
 ## Finale opstelling
+[![Video](<gehele samenstelling.png>)](https://youtu.be/8d42rb_iuHo)
