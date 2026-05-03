@@ -61,3 +61,4 @@ De opbouw van de code ging als volgt:
 ## Documenten
 1. [Links](Docs/links.md)
 2. [Opstellingen](Docs/opstellingen.md)
+3. [videos](<Filmpjes fysieke opstellingen/README.md>)
