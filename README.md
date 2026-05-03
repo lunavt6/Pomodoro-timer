@@ -22,13 +22,14 @@ In arduino:
 ### Scherm
 Hierop zie je de tijd en kan je instellen hoe lang je wilt werken. Naast het instellen wordt er ook weergegeven hoeveel tijd je werkelijk studeert, dus de tijd zonder pauzes. 
 
-![opstart](Imgs/scherm_opstart.png)
+<img src="Imgs/scherm_opstart.png" width="300">
 
 Het scherm zal ook weergeven in welke status je je bevindt, zo verschijnt er studeren op wanneer het groene lichtje brandt en (lange) pauze wanneer het rode lichtje brandt.
 
-![studeren](Imgs/scherm_studeren.png)
-![pauze](Imgs/scherm_pauze.png)
-![lange pauze](Imgs/scherm_lange_pauze.png)
+<img src="Imgs/scherm_studeren.png" width="300">
+<img src="Imgs/scherm_pauze.png" width="300">
+<img src="Imgs/scherm_lange_pauze.png" width="300">
+
 
 
 ### Knoppen
