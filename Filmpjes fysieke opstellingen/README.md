@@ -33,9 +33,26 @@
 [link](https://youtube.com/shorts/nx5WJM_mvdI)
 
 ## Finale opstelling
-
+### Versie 1
 <a href="https://youtu.be/8d42rb_iuHo">
   <img src="gehele samenstelling.png" width="500">
 </a>
 
 [link](https://youtu.be/8d42rb_iuHo)
+
+### Versie 2
+#### Algemene werking
+
+<a href="https://youtu.be/vc-ztAjbQ-A">
+  <img src="Gehele samenstelling V2.png" width="500">
+</a>
+
+[link](https://youtu.be/vc-ztAjbQ-A)
+
+#### Lange pauze
+
+<a href="https://youtu.be/7hNZdPTdyHk">
+  <img src="Gehele samenstelling V2.png" width="500">
+</a>
+
+[link](https://youtu.be/7hNZdPTdyHk)
