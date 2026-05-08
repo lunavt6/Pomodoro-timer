@@ -53,6 +53,13 @@ Deze leds branden wanneer er op de knop om de timer te starten wordt gedrukt.
 ### Geluid
 Bij elke kleurwisseling van de leds zal er een ping geluid te horen zijn, alsook bij het starten en eindigen van de timer.
 
+## Algemene werking
+
+Onderstaand is een schema weergegeven waarin functies en componenten verbonden staan om te illustreren wat met elkaar verbonden is.
+
+![schema algemene werking](<Imgs/schema algemene werking.png>)
+
+
 ## Algemene werkwijze
 De opbouw van de code ging als volgt:
 - De code voor de componenten werd apart geschreven, zo kon van elk de werking getest worden.
