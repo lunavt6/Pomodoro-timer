@@ -26,7 +26,7 @@ https://wokwi.com/projects/462172590186935297
 
 **Deel scherm en knoppen**
 
-https://wokwi.com/projects/462175882081870849
+https://wokwi.com/projects/463446687865780225
 
 ## Alle componenten samen
 
