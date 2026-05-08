@@ -70,3 +70,16 @@ De opbouw van de code ging als volgt:
 1. [Links](Docs/links.md)
 2. [Opstellingen](Docs/opstellingen.md)
 3. [videos](<Filmpjes fysieke opstellingen/README.md>)
+
+## kritische reflectie
+
+Tijdens dit project hebben we veel nieuwe kennis en vaardigheden opgedaan, aangezien dit onze eerste ervaring was met Arduino. Tijdens het proces kwamen we verschillende uitdagingen tegen die ons hielpen om beter inzicht te krijgen in zowel hardware als software.
+
+Een moeilijkheid was het probleem van de knopdebounce. In het begin zorgde dit voor onstabiele invoer, maar na verder onderzoek en testen slaagden we erin om hiervoor een individueel een oplossing implementeerde, waardoor dit nu in de code op verschillende manieren word opgelost.
+
+Daarnaast bleek ook de fysieke aansluiting van het scherm complexer dan verwacht. Om dit probleem te vereenvoudigen, hebben we uiteindelijk gebruikgemaakt van een component die de verbinding van het scherm reduceerde tot slechts vier pinnen, wat de integratie aanzienlijk vergemakkelijkte.
+
+Het project werd echter als een moeilijk proces ervaren, omdat we voortdurend verschillende technische problemen moesten oplossen. Zo moesten we ervoor zorgen dat de tijd correct bleef aftellen, dat het scherm niet begon te knipperen en dat tekst niet over elkaar heen werd geschreven. Daarnaast liep de tijd aanvankelijk niet verder door tijdens de lange pauze, wat eveneens opgelost moest worden. Ook bij het opnieuw opstarten van het systeem mochten oude teksten niet overschreven worden en moest het volledige scherm correct leeggemaakt worden bij het uitschakelen zodat alle tekst verdween. Deze problemen vereisten veel testen, aanpassen en opnieuw programmeren.
+
+Doorheen het project hebben we meerdere iteraties doorlopen waarbij we stap voor stap componenten samenbrachten, nieuwe functionaliteiten toevoegden en problemen oplosten die tijdens het proces naar voren kwamen. Achteraf bekeken hadden we onze code compacter en overzichtelijker kunnen maken door vaker gebruik te maken van functies en een betere structuur in de code aan te brengen.
+
