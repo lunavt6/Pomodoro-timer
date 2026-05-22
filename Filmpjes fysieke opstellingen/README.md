@@ -57,3 +57,5 @@
 </a>
 
 [link](https://youtu.be/7hNZdPTdyHk)
+
+>OPMERKING: De afbeeldingen bevatten een link naar de online video.

@@ -2,7 +2,7 @@
 
 ## Componenten apart
 
-**Deel geluid**
+**Deel buzzer**
 
 https://wokwi.com/projects/460822150091629569
 
@@ -10,7 +10,7 @@ https://wokwi.com/projects/460822150091629569
 
 https://wokwi.com/projects/461272536199758849 
 
-**Deel leds**
+**Deel LEDs**
 
 https://wokwi.com/projects/461272267489519617
 
