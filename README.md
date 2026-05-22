@@ -5,6 +5,19 @@
 - *Loes Vanmeerbeek*
 - *Luna Van Tittelboom*
 
+## Inleiding
+
+Dit project omvat de opbouw van een Pomodoro timer.
+
+*Een Pomodoro timer is een tijdmanagementtechniek waarbij werk wordt opgedeeld in korte, gefocuste werkblokken van meestal 25 minuten, afgewisseld met korte pauzes.
+
+Tijdens zo’n “pomodoro” werk je geconcentreerd aan één taak zonder afleiding. Na elke werkperiode volgt een korte pauze (bijvoorbeeld 5 minuten) om te ontspannen. Na een aantal cycli neem je een langere pauze.
+
+Het doel van een Pomodoro timer is om de concentratie te verbeteren, uitstelgedrag te verminderen en productiviteit op een haalbaar en ritmisch tempo te verhogen.*
+
+![alt text](Imgs/render.png)
+
+
 ## Doelstellingen
 1. Vooraf instellen hoelang er gestudeerd moet worden.
     - Het instellen gebeurt in sprongen van 30 minuten.
@@ -17,7 +30,6 @@
 - korte pauze = 5 seconden
 - lange pauze = 10 seconden + 5 seconden 
 
-![alt text](Imgs/render.png)
 
 ## Verschillende componenten
 
