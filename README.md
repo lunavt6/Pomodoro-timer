@@ -127,7 +127,7 @@ Het project werd echter als een moeilijk proces ervaren, omdat we voortdurend ve
 
 Doorheen het project hebben we meerdere iteraties doorlopen waarbij we stap voor stap componenten samenbrachten, nieuwe functionaliteiten toevoegden en problemen oplosten die tijdens het proces naar voren kwamen. Achteraf bekeken hadden we onze code compacter en overzichtelijker kunnen maken door vaker gebruik te maken van functies en een betere structuur in de code aan te brengen. Deze werkwijze zorgde ervoor dat we gestructureerd te werk gingen en eenvoudiger begonnen.
 
-## Fysiek maken prototype 
+### Fysiek maken prototype 
 
 Bij het fysiek aansluiten van het scherm bleek dit complexer dan verwacht, door de vele kabels was er telkens slecht contact waardoor veel moeilijkheden werden ondervonden met dit correct aan te sluiten. Om dit probleem op te lossen werd uiteindelijk gebruikgemaakt van een component die de verbinding van het scherm reduceerde tot slechts vier pinnen, wat de integratie aanzienlijk vergemakkelijkte. Hiervoor werd een library gebruikt en werden online videos bekeken op hoe dit aangesloten diende te worden zowel fysiek als in de code.
 
