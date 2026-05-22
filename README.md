@@ -12,7 +12,7 @@ Dit project omvat de opbouw van een Pomodoro timer.
 
 Een Pomodoro timer is een tijdmanagementtechniek waarbij werk wordt opgedeeld in korte, gefocuste werkblokken van meestal 25 minuten, afgewisseld met korte pauzes van 5 minuten.
 
-Tijdens zo’n “pomodoro” werk je geconcentreerd aan één taak zonder afleiding. Na 4 cycli's neem je een langere pauze van 10 minuten.
+Tijdens zo’n “Pomodoro” werk je geconcentreerd aan één taak zonder afleiding. Na 4 cycli neem je een langere pauze van 10 minuten.
 
 Het doel van een Pomodoro timer is om de concentratie te verbeteren, uitstelgedrag te verminderen en productiviteit op een haalbaar en ritmisch tempo te verhogen.
 
@@ -20,27 +20,27 @@ Het doel van een Pomodoro timer is om de concentratie te verbeteren, uitstelgedr
 
 
 ## Doelstellingen 
-1. Vooraf instellen hoelang (hoeveel pomodoro's) er gestudeerd moet worden.
-    - Het instellen van de tijd gebeurt in sprongen van 30 minuten, hier zit de pauze bij in gerekend.
+1. Vooraf instellen hoelang (hoeveel Pomodoro's) er gestudeerd moet worden.
+    - Het instellen van de tijd gebeurt in sprongen van 30 minuten, hierin is de pauzetijd inbegrepen.
 2. Na elke 25 minuten werken volgt er een pauze van 5 minuten pauze.
-3. Na vier keer een pomodore te doorlopen volgt er een lange pauze van 10 minuten.
+3. Na vier keer een Pomodoro te doorlopen volgt er een lange pauze van 10 minuten.
 
 **In Arduino:**
 - studeren = 25 seconden
 - korte pauze = 5 seconden
 - lange pauze = 10 seconden
 
-In de code van arduino wordt gebruik gemaakt van seconden en niet van minuten. Op deze manier kan de werking van de code snel geobserveerd worden.
+In de code van Arduino wordt gebruik gemaakt van seconden en niet van minuten. Op deze manier kan de werking van de code snel geobserveerd worden.
 
 
 ## Verschillende componenten
 
 | Component| Uitleg |
 |:------|:------|
-|Scherm| Op het scherm kunnen via de knoppen ingesteld worden hoe lang de gebruiker wenst te werken. Naast het instellen wordt er ook weergegeven hoeveel tijd werkelijk gestudeerd zal worden, dit is dus de tijd zonder pauzes. <br><img src="Imgs/scherm_opstart.png" width="300"><br><br> het scherm zal ook de aftellende tijd weergeven wanneer de timer gestart worden, hierbij zal het scherm weergeven in welke status de gebruiker zich bevind (studeren/pauze/lange pauze). <br><img src="Imgs/scherm_studeren.png" width="300"> <img src="Imgs/scherm_pauze.png" width="300"> <img src="Imgs/scherm_lange_pauze.png" width="300">|
+|Scherm| Op het scherm kunnen via de knoppen ingesteld worden hoe lang de gebruiker wenst te werken. Naast het instellen wordt er ook weergegeven hoeveel tijd werkelijk gestudeerd zal worden, dit is dus de tijd zonder pauzes. <br><img src="Imgs/scherm_opstart.png" width="300"><br><br> Het scherm zal ook de aftellende tijd weergeven wanneer de timer gestart worden, hierbij zal het scherm weergeven in welke status de gebruiker zich bevind (studeren/pauze/lange pauze). <br><img src="Imgs/scherm_studeren.png" width="300"> <img src="Imgs/scherm_pauze.png" width="300"> <img src="Imgs/scherm_lange_pauze.png" width="300">|
 |Knoppen|De timer zal in totaal vier verschillende knoppen hebben: <br>- Een aan- en uitknop<br>- Een knop om de timer te starten<br>- Een knop om de tijd te verhogen<br>- Een knop om de tijd te verlagen<br>![alt text](Imgs/aanuit.png)![alt text](Imgs/start.png)![alt text](Imgs/plus.png)![alt text](Imgs/min.png)|
-|LED's|Er zullen twee leds aanwezig zijn.<br>- Een <font color="green">groen</font> ledje dat zal oplichten tijdens het studeren.<br>- Een <font color="red">rood </font>ledje dat zak oplichten tijdens de pauze.<br>Deze leds zullen dus branden wanneer de tijd van de timer loopt.<br>![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)|
-|Geluid|Bij elke kleurwisseling van de leds zal er een ping geluid te horen zijn, alsook bij het starten en eindigen van de timer.|
+|LED's|Er zullen twee LEDs aanwezig zijn.<br>- Een <font color="green">groen</font> LED die oplicht tijdens het studeren.<br>- Een <font color="red">rood </font>LED die oplicht tijdens de pauze.<br>Deze leds zullen dus branden wanneer de tijd van de timer loopt.<br>![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)|
+|Geluid|Bij elke kleurwisseling van de LED's zal er een ping geluid te horen zijn, alsook bij het starten en eindigen van de timer.|
 
 
 ## Algemene werking
@@ -119,11 +119,15 @@ G --> K
 
 Tijdens dit project hebben we veel nieuwe kennis en vaardigheden opgedaan, aangezien dit onze eerste ervaring was met Arduino. Tijdens het proces kwamen we verschillende uitdagingen tegen die ons hielpen om beter inzicht te krijgen in zowel hardware als software.
 
+### Programmeren
+
 Een moeilijkheid was het probleem van de knopdebounce. In het begin zorgde dit voor onstabiele invoer, maar na verder onderzoek en testen slaagden we erin om hiervoor een oplossing te vinden zonder gebruik te maken van een library. Doordat de taken werden verdeeld bij het coderen van de afzonderlijke componenten werden hiervoor 2 afzonderlijke oplossingen gevonden, deze zijn zichtbaar in de finale code.
 
 Het project werd echter als een moeilijk proces ervaren, omdat we voortdurend verschillende technische problemen tegen kwamen die opgelost diende te worden. Zo moesten we ervoor zorgen dat de tijd correct bleef aftellen, dat het scherm niet begon te knipperen en dat tekst niet over elkaar heen werd geschreven. Daarnaast liep de tijd aanvankelijk niet verder door tijdens de lange pauze, wat eveneens opgelost moest worden. Ook bij het opnieuw opstarten van het systeem mochten oude teksten niet overschreven worden en moest het volledige scherm correct leeggemaakt worden bij het uitschakelen. Deze problemen vereisten veel testen, aanpassen en opnieuw programmeren. veel van deze problemen kwamen terug bij het toevoegen van een functie waardoor de code telkens op verschillende plaatsen aangepast diende te worden.
 
 Doorheen het project hebben we meerdere iteraties doorlopen waarbij we stap voor stap componenten samenbrachten, nieuwe functionaliteiten toevoegden en problemen oplosten die tijdens het proces naar voren kwamen. Achteraf bekeken hadden we onze code compacter en overzichtelijker kunnen maken door vaker gebruik te maken van functies en een betere structuur in de code aan te brengen. Deze werkwijze zorgde ervoor dat we gestructureerd te werk gingen en eenvoudiger begonnen.
+
+## Fysiek maken prototype 
 
 Bij het fysiek aansluiten van het scherm bleek dit complexer dan verwacht, door de vele kabels was er telkens slecht contact waardoor veel moeilijkheden werden ondervonden met dit correct aan te sluiten. Om dit probleem op te lossen werd uiteindelijk gebruikgemaakt van een component die de verbinding van het scherm reduceerde tot slechts vier pinnen, wat de integratie aanzienlijk vergemakkelijkte. Hiervoor werd een library gebruikt en werden online videos bekeken op hoe dit aangesloten diende te worden zowel fysiek als in de code.
 
