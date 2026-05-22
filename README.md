@@ -1,43 +1,45 @@
 # Pomodoro-timer
-
+*AC 2025-2026*
 ## Teamleden
 - *Leen Geenens*
 - *Loes Vanmeerbeek*
 - *Luna Van Tittelboom*
 
+
 ## Inleiding
 
 Dit project omvat de opbouw van een Pomodoro timer.
 
-*Een Pomodoro timer is een tijdmanagementtechniek waarbij werk wordt opgedeeld in korte, gefocuste werkblokken van meestal 25 minuten, afgewisseld met korte pauzes.
+Een Pomodoro timer is een tijdmanagementtechniek waarbij werk wordt opgedeeld in korte, gefocuste werkblokken van meestal 25 minuten, afgewisseld met korte pauzes van 5 minuten.
 
-Tijdens zo’n “pomodoro” werk je geconcentreerd aan één taak zonder afleiding. Na elke werkperiode volgt een korte pauze (bijvoorbeeld 5 minuten) om te ontspannen. Na een aantal cycli neem je een langere pauze.
+Tijdens zo’n “pomodoro” werk je geconcentreerd aan één taak zonder afleiding. Na 4 cycli's neem je een langere pauze van 10 minuten.
 
-Het doel van een Pomodoro timer is om de concentratie te verbeteren, uitstelgedrag te verminderen en productiviteit op een haalbaar en ritmisch tempo te verhogen.*
+Het doel van een Pomodoro timer is om de concentratie te verbeteren, uitstelgedrag te verminderen en productiviteit op een haalbaar en ritmisch tempo te verhogen.
 
 ![alt text](Imgs/render.png)
 
 
-## Doelstellingen
-1. Vooraf instellen hoelang er gestudeerd moet worden.
-    - Het instellen gebeurt in sprongen van 30 minuten.
-    - Pauze zit er dus ingerekend.
+## Doelstellingen 
+1. Vooraf instellen hoelang (hoeveel pomodoro's) er gestudeerd moet worden.
+    - Het instellen van de tijd gebeurt in sprongen van 30 minuten, hier zit de pauze bij in gerekend.
 2. Na elke 25 minuten werken volgt er een pauze van 5 minuten pauze.
-3. Na vier keer stap 2 te doorlopen volgt er een lange pauze van 30 minuten.
+3. Na vier keer een pomodore te doorlopen volgt er een lange pauze van 10 minuten.
 
 **In Arduino:**
 - studeren = 25 seconden
 - korte pauze = 5 seconden
-- lange pauze = 10 seconden + 5 seconden 
+- lange pauze = 10 seconden
+
+In de code van arduino wordt gebruik gemaakt van seconden en niet van minuten. Op deze manier kan de werking van de code snel geobserveerd worden.
 
 
 ## Verschillende componenten
 
 | Component| Uitleg |
 |:------|:------|
-|Scherm| Hierop zie je de tijd en kan je instellen hoe lang je wilt werken. Naast het instellen wordt er ook weergegeven hoeveel tijd je werkelijk studeert, dus de tijd zonder pauzes. <br><img src="Imgs/scherm_opstart.png" width="300"><br> Het scherm zal ook weergeven in welke status je je bevindt, zo verschijnt er studeren op wanneer het groene lichtje brandt en (lange) pauze wanneer het rode lichtje brandt. <br><img src="Imgs/scherm_studeren.png" width="300"> <img src="Imgs/scherm_pauze.png" width="300"> <img src="Imgs/scherm_lange_pauze.png" width="300">|
+|Scherm| Op het scherm kunnen via de knoppen ingesteld worden hoe lang de gebruiker wenst te werken. Naast het instellen wordt er ook weergegeven hoeveel tijd werkelijk gestudeerd zal worden, dit is dus de tijd zonder pauzes. <br><img src="Imgs/scherm_opstart.png" width="300"><br><br> het scherm zal ook de aftellende tijd weergeven wanneer de timer gestart worden, hierbij zal het scherm weergeven in welke status de gebruiker zich bevind (studeren/pauze/lange pauze). <br><img src="Imgs/scherm_studeren.png" width="300"> <img src="Imgs/scherm_pauze.png" width="300"> <img src="Imgs/scherm_lange_pauze.png" width="300">|
 |Knoppen|De timer zal in totaal vier verschillende knoppen hebben: <br>- Een aan- en uitknop<br>- Een knop om de timer te starten<br>- Een knop om de tijd te verhogen<br>- Een knop om de tijd te verlagen<br>![alt text](Imgs/aanuit.png)![alt text](Imgs/start.png)![alt text](Imgs/plus.png)![alt text](Imgs/min.png)|
-|LED's|Er zullen twee leds aanwezig zijn.<br>- Een <font color="green">groen</font> ledje voor tijdens het studeren.<br>- Een <font color="red">rood </font>ledje voor tijdens de pauze.<br>Deze leds branden wanneer er op de knop om de timer te starten wordt gedrukt.<br>![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)|
+|LED's|Er zullen twee leds aanwezig zijn.<br>- Een <font color="green">groen</font> ledje dat zal oplichten tijdens het studeren.<br>- Een <font color="red">rood </font>ledje dat zak oplichten tijdens de pauze.<br>Deze leds zullen dus branden wanneer de tijd van de timer loopt.<br>![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)|
 |Geluid|Bij elke kleurwisseling van de leds zal er een ping geluid te horen zijn, alsook bij het starten en eindigen van de timer.|
 
 
@@ -110,7 +112,7 @@ G --> K
 1. [Algemene werkwijze](<Algemene werkwijze/README.md>)
 ## Documenten
 1. [Links WokWi-simulaties](Docs/links.md)
-2. [Samenvatting codes Arduino](Arduino/klad.ino)
+2. [Samenvatting codes Arduino](Arduino/README.md)
 3. [Videos fysieke opstellingen](<Filmpjes fysieke opstellingen/README.md>)
 
 ## Kritische reflectie
