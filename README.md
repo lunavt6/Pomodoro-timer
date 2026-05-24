@@ -12,7 +12,7 @@ Dit project omvat de opbouw van een Pomodoro timer.
 
 Een Pomodoro timer is een tijdmanagementtechniek waarbij werk wordt opgedeeld in korte, gefocuste werkblokken van meestal 25 minuten, afgewisseld met korte pauzes van 5 minuten.
 
-Tijdens zo’n “Pomodoro” werk je geconcentreerd aan één taak zonder afleiding. Na 4 cycli neem je een langere pauze van 10 minuten.
+Tijdens zo’n “Pomodoro”-blok werk je geconcentreerd aan één taak zonder afleiding. Na 4 cycli (120 min) neem je een langere pauze van 10 minuten.
 
 Het doel van een Pomodoro timer is om de concentratie te verbeteren, uitstelgedrag te verminderen en productiviteit op een haalbaar en ritmisch tempo te verhogen.
 
@@ -37,15 +37,15 @@ In de code van Arduino wordt gebruik gemaakt van seconden en niet van minuten. O
 
 | Component| Uitleg |
 |:------|:------|
-|Scherm| Op het scherm kunnen via de knoppen ingesteld worden hoe lang de gebruiker wenst te werken. Naast het instellen wordt er ook weergegeven hoeveel tijd werkelijk gestudeerd zal worden, dit is dus de tijd zonder pauzes. <br><img src="Imgs/scherm_opstart.png" width="300"><br><br> Het scherm zal ook de aftellende tijd weergeven wanneer de timer gestart worden, hierbij zal het scherm weergeven in welke status de gebruiker zich bevind (studeren/pauze/lange pauze). <br><img src="Imgs/scherm_studeren.png" width="300"> <img src="Imgs/scherm_pauze.png" width="300"> <img src="Imgs/scherm_lange_pauze.png" width="300">|
-|Knoppen|De timer zal in totaal vier verschillende knoppen hebben: <br>- Een aan- en uitknop<br>- Een knop om de timer te starten<br>- Een knop om de tijd te verhogen<br>- Een knop om de tijd te verlagen<br>![alt text](Imgs/aanuit.png)![alt text](Imgs/start.png)![alt text](Imgs/plus.png)![alt text](Imgs/min.png)|
+|Scherm| Op het scherm kan de gebruiker door middel van knoppen intsellen hoelang deze wenst te werken. Naast het instellen wordt er ook weergegeven hoeveel tijd werkelijk gestudeerd zal worden, dit is dus de tijd zonder pauzes. <br><img src="Imgs/scherm_opstart.png" width="300"><br><br> Wanneer de timer gestart wordt zal het scherm ookook de aftellende tijd weergeven, hierbij zal het scherm tevens weergeven in welke status de gebruiker zich bevindt (studeren/pauze/lange pauze). <br><img src="Imgs/scherm_studeren.png" width="300"> <img src="Imgs/scherm_pauze.png" width="300"> <img src="Imgs/scherm_lange_pauze.png" width="300">|
+|Knoppen|De timer zal in totaal vier verschillende knoppen hebben: <br>- Een aan- en uitknop van het toestel<br>- Een knop om de timer te starten<br>- Een knop om de tijd te verhogen (+ 30sec)<br>- Een knop om de tijd te verlagen (-30 sec)<br>![alt text](Imgs/aanuit.png)![alt text](Imgs/start.png)![alt text](Imgs/plus.png)![alt text](Imgs/min.png)|
 |LED's|Er zullen twee LEDs aanwezig zijn.<br>- Een <font color="green">groen</font> LED die oplicht tijdens het studeren.<br>- Een <font color="red">rood </font>LED die oplicht tijdens de pauze.<br>Deze leds zullen dus branden wanneer de tijd van de timer loopt.<br>![rode led](<Imgs/rode led.png>)![groene led](<Imgs/groene led.png>)|
 |Geluid|Bij elke kleurwisseling van de LED's zal er een ping geluid te horen zijn, alsook bij het starten en eindigen van de timer.|
 
 
 ## Algemene werking
 
-Onderstaand is een schema weergegeven waarin componenten (in- en output) en functies verbonden worden om de connecties in het systeem te verduidelijken.
+In een onderstaand schema is weergegeven hoe de componenten (in- en output) en functies verbonden worden om de connecties in het systeem te verduidelijken.
 
 ```mermaid
 graph LR
