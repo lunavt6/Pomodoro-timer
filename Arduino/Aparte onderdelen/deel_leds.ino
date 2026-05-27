@@ -1,7 +1,7 @@
 // statemachine gebruiken omdat de lichten na elkaar moeten afgaan, niet tegelijk
 
-int ledPinR = 3;
-int ledPinG = 4;
+int ledPinR = A1;
+int ledPinG = A0;
 
 unsigned long vorigeTijd;
 
