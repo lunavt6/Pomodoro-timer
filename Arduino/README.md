@@ -1,4 +1,6 @@
 # Codes arduino
+> Deze codes werden nadat de finale code werd gemaakt in deze README geplaatst aangezien er niet kon klinkt worden naar '.io' bestanden. Deze bestanden zijn echter wel terug te vinden in deze map. In deze '.io' bestanden werd bij elke iteratie van dit proces de code geüpdated.
+
 ## Aparte componenten
 - [Buzzer](./Aparte%20onderdelen/deel_geluid.ino)
 ```cpp
