@@ -129,7 +129,9 @@ Doorheen het project hebben we meerdere iteraties doorlopen waarbij we stap voor
 
 ### Fysiek maken prototype 
 
-jet fysiek aansluiten van het scherm bleek complexer dan verwacht: door de vele kabels was er telkens slecht contact waardoor we moeilijkheden ondervonden om het scherm correct aan te sluiten. Om dit probleem op te lossen werd uiteindelijk gebruik gemaakt van een component die de verbinding van het scherm reduceerde tot slechts vier pinnen, wat de integratie aanzienlijk vergemakkelijkte. Hiervoor werd een library gebruikt en werden online video's bekeken hoe dit aangesloten diende te worden, zowel fysiek als in de code.
+Het fysiek aansluiten van het scherm bleek complexer dan verwacht: door de vele kabels was er telkens slecht contact waardoor we moeilijkheden ondervonden om het scherm correct aan te sluiten. Om dit probleem op te lossen werd uiteindelijk gebruik gemaakt van een component die de verbinding van het scherm reduceerde tot slechts vier pinnen, wat de integratie aanzienlijk vergemakkelijkte. Hiervoor werd een library gebruikt en werden online video's bekeken hoe dit aangesloten diende te worden, zowel fysiek als in de code.
+
+Het ontwikkelen van input- en outputvalidatiescripts had ons aanzienlijk kunnen helpen tijdens het fysiek opbouwen van het prototype, doordat ze sneller hadden kunnen aantonen of de schermen correct functioneerden en of eventuele problemen te wijten waren aan de bekabeling en aansluitingen in plaats van de code. Hierdoor had de foutopsporing bij de montage efficiënter kunnen verlopen en was mogelijk vroeger duidelijk geworden waar de knelpunten zich bevonden. Deze scripts werden echter pas later ontwikkeld, maar kunnen bij toekomstige opstellingen wel van nut zijn.
 
 Een ander probleem dat bij het fysiek aansluiten naar boven kwam was het vaststellen van de juiste weerstanden. In WokWi werden geen of foute weerstanden aangesloten, waar dit wel noodzakelijk was bij de fysieke componenten.
 

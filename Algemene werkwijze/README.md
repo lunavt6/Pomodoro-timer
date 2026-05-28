@@ -59,6 +59,8 @@ De opbouw van de finale code van de code ging als volgt:<br>
       <img src="../Imgs/opstelling_alle_componenten.png" width="300">
     </a><br><br>
 
+4. Om te verifiëren dat alle componenten correct waren aangesloten in het fysieke prototype en naar behoren functioneerden, werden input- en outputvalidatiescripts ontwikkeld. Deze scripts werden echter pas opgesteld nadat reeds een werkende opstelling voor de projectvoorstelling gerealiseerd was, waardoor ze daarvoor niet meer noodzakelijk waren. Ze kunnen wel nuttig zijn wanneer deze opstelling in de toekomst opnieuw wordt opgebouwd of getest.
+
 >De codes van al deze afzonderlijeke stappen kunnen [hier](../Arduino/README.md) terug gevonden worden.
 
 >OPMERKING: De afbeeldingen bevatten een link naar de WokWi-simulatie. De aparte links kunnen [hier](../Docs/links.md) terug gevonden worden.
