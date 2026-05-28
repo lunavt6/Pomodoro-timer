@@ -27,13 +27,12 @@ De opbouw van de finale code van de code ging als volgt:<br>
       <img src="../Imgs/deel scherm.png" width="300">
     </a><br><br>
 
-<br>
 
 
 2. De codes van de LED's en de buzzer werden vervolgens samengevoegd, alsook degene van het scherm en de knoppen.<br><br>
 
     - Buzzer + LED's:
-    In deze code werden de LED's gekoppeld aan de buzzer, bij elke statusverandering zal nu een geluid klinken.<br>
+    In deze code werden de LED's gekoppeld aan de buzzer, bij elke statusverandering zal nu een geluid klinken.<br><br>
     <a href="https://wokwi.com/projects/462172590186935297">
       <img src="../Imgs/deel LED+buzzer Wokwi.png" width="300">
     </a><br><br>
@@ -45,7 +44,7 @@ De opbouw van de finale code van de code ging als volgt:<br>
       <img src="../Imgs/deel knoppen+scherm.png" width="300">
     </a><br><br>
 
-<br>
+
 
 
 3. Finaal werden beide codes samengevoegd tot een geheel werkend product.<br><br>
