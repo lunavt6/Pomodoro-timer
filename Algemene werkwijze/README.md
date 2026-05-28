@@ -4,13 +4,13 @@ De opbouw van de finale code van de code ging als volgt:<br>
 1. De code voor de verschillende componenten werd eerst apart geschreven. Zo kon van elk component de werking getest worden via WokWi-simulaties en konden noodzakelijke functies geïdentificeerd worden. Hierbij werd gebruikgemaakt van libraries en de leerstof uit de lessen.<br>
 
     - Buzzer:
-    De buzzer werd getest met de functie `tone()` om geluid te genereren.<br>
+    De buzzer werd getest met de functie `tone()` om geluid te genereren.<br><br>
     <a href="https://wokwi.com/projects/460822150091629569">
       <img src="../Imgs/opstelling_geluid.png" width="300">
     </a><br><br>
 
     - Knoppen:
-    Deze code bevat de werking van 2 knoppen. Die zorgen voor het instellen van de tijd: +/- 30 seconden. De aan/uit knop en de knop om het agtellen te beginnen moeten later toegevoegd worden bij het samenbrengen van de verschillende componenten.<br>
+    Deze code bevat de werking van 2 knoppen. Die zorgen voor het instellen van de tijd: +/- 30 seconden. De aan/uit knop en de knop om het agtellen te beginnen moeten later toegevoegd worden bij het samenbrengen van de verschillende componenten.<br><br>
     <a href="https://wokwi.com/projects/461272536199758849 ">
       <img src="../Imgs/deel knoppen apart.png" width="300">
     </a><br><br>
@@ -22,7 +22,7 @@ De opbouw van de finale code van de code ging als volgt:<br>
     </a><br><br>
 
     - Scherm:
-    In deze code werd voornamelijk onderzocht hoe het LCD-scherm diende aangestuurd te worden en welke libraries hiervoor vereist waren. Het scherm printte hierbij enkel een boodschap.<br>
+    In deze code werd voornamelijk onderzocht hoe het LCD-scherm diende aangestuurd te worden en welke libraries hiervoor vereist waren. Het scherm printte hierbij enkel een boodschap.<br><br>
     <a href="https://wokwi.com/projects/462175882081870849">
       <img src="../Imgs/deel scherm.png" width="300">
     </a><br><br>
@@ -30,7 +30,7 @@ De opbouw van de finale code van de code ging als volgt:<br>
 <br>
 
 
-2. De codes van de LED's en de buzzer werden vervolgens samengevoegd, alsook degene van het scherm en de knoppen.<br>
+2. De codes van de LED's en de buzzer werden vervolgens samengevoegd, alsook degene van het scherm en de knoppen.<br><br>
 
     - Buzzer + LED's:
     In deze code werden de LED's gekoppeld aan de buzzer, bij elke statusverandering zal nu een geluid klinken.<br>
@@ -40,7 +40,7 @@ De opbouw van de finale code van de code ging als volgt:<br>
 
     - Knoppen + scherm:
     In deze code werden de laatste 2 knoppen bijgevoegd: aan/uit en het starten van de timer. 
-    Verder werd ervoor gezorgd dat alle knoppen interageren met het scherm zonder dat dit knippert.<br>
+    Verder werd ervoor gezorgd dat alle knoppen interageren met het scherm zonder dat dit knippert.<br><br>
     <a href="https://wokwi.com/projects/463446687865780225">
       <img src="../Imgs/deel knoppen+scherm.png" width="300">
     </a><br><br>
@@ -48,18 +48,18 @@ De opbouw van de finale code van de code ging als volgt:<br>
 <br>
 
 
-3. Finaal werden beide codes samengevoegd tot een geheel werkend product.<br>
+3. Finaal werden beide codes samengevoegd tot een geheel werkend product.<br><br>
     - Finale samenstelling:
     In deze code werden alle componenten samengevoegd. De LED's zullen uitzonderlijk branden wanneer de timer loopt. 
     Bij elke LED-verandering, het indrukken van de aan/uit-knop en bij het starten van de timer klinkt een geluid.
     De boodschappen die op het scherm verschijnen, zijn verbonden met de statusveranderingen van de LED's.
     Verder werd een effectieve studietijd toegevoegd, dit is de tijd zonder pauze.
-    Het scherm werd aangesloten op een component die slechts 4 pinnen vereist, dit zorgt voor extra gebruiksgemak bij het aansluiten van de pinnen.<br>
+    Het scherm werd aangesloten op een component die slechts 4 pinnen vereist, dit zorgt voor extra gebruiksgemak bij het aansluiten van de pinnen.<br><br>
     <a href="https://wokwi.com/projects/462923072193805313">
       <img src="../Imgs/opstelling_alle_componenten.png" width="300">
     </a><br><br>
 
-4. Om te verifiëren dat alle componenten correct waren aangesloten in het fysieke prototype en naar behoren functioneerden, werden input- en outputvalidatiescripts ontwikkeld. Deze scripts werden echter pas opgesteld nadat reeds een werkende opstelling voor de projectvoorstelling gerealiseerd was, waardoor ze daarvoor niet meer noodzakelijk waren. Ze kunnen wel nuttig zijn wanneer deze opstelling in de toekomst opnieuw wordt opgebouwd of getest.
+4. Om te verifiëren dat alle componenten correct waren aangesloten in het fysieke prototype en naar behoren functioneerden, werden input- en outputvalidatiescripts ontwikkeld. Deze scripts werden echter pas opgesteld nadat reeds een werkende opstelling voor de projectvoorstelling gerealiseerd was, waardoor ze daarvoor niet meer noodzakelijk waren. Ze kunnen wel nuttig zijn wanneer deze opstelling in de toekomst opnieuw wordt opgebouwd of getest.<br><br>
 
 >De codes van al deze afzonderlijeke stappen kunnen [hier](../Arduino/README.md) terug gevonden worden.
 
