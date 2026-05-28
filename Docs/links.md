@@ -32,4 +32,12 @@ https://wokwi.com/projects/463446687865780225
 
 https://wokwi.com/projects/462923072193805313
 
+## Tests
 
+**Test inputs**
+
+https://wokwi.com/projects/465270092587310081
+
+**Test outputs**
+
+https://wokwi.com/projects/465268335416915969

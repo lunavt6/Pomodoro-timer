@@ -19,6 +19,6 @@
 - [Gehele werking](samenstelling_onderdelen/samenstelling_onderdelen.ino)
 
 ## Input- en output validatie scripts
-- [Input validatie script]
+- [Input validatie script](Test_inputs/Test_inputs.ino)
 
-- [Output validatie script]
+- [Output validatie script](Test_outputs/Test_outputs.ino)
