@@ -24,7 +24,7 @@ De opbouw van de finale code van de code ging als volgt:<br>
     - Scherm:
     In deze code werd voornamelijk onderzocht hoe het LCD-scherm diende aangestuurd te worden en welke libraries hiervoor vereist waren. Het scherm printte hierbij enkel een boodschap.<br>
     <a href="https://wokwi.com/projects/462175882081870849">
-      <img src="deel scherm.png" width="300">
+      <img src="../Imgs/deel scherm.png" width="300">
     </a><br><br>
 
 <br>
@@ -61,4 +61,4 @@ De opbouw van de finale code van de code ging als volgt:<br>
 
 >De codes van al deze afzonderlijeke stappen kunnen [hier](../Arduino/README.md) terug gevonden worden.
 
->OPMERKING: De afbeeldingen bevatten een link naar de WokWi-simulatie. De aparte links kunnen [hier](../Docs/links.md)terug gevonden worden.
+>OPMERKING: De afbeeldingen bevatten een link naar de WokWi-simulatie. De aparte links kunnen [hier](../Docs/links.md) terug gevonden worden.
