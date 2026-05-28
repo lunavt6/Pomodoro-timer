@@ -64,7 +64,7 @@ De opbouw van de finale code van de code ging als volgt:<br>
     <img src="../Imgs/opstelling_alle_componenten.png" width="300">
   </a><br><br>
 
-  Outputs:<br>
+  Outputs:<br><br>
   <a href="https://wokwi.com/projects/465268335416915969">
     <img src="../Imgs/opstelling_alle_componenten.png" width="300">
   </a><br><br>
